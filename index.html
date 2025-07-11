@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO 메타 태그 -->
+    <title>스네이트 어드벤처 - 무료 온라인 스네이크 게임 | 클래식 아케이드 게임</title>
+    <meta name="description" content="스네이트 어드벤처에서 무료 온라인 뱀 게임을 즐기세요! 클래식 스네이크 게임으로 추억을 되살려보세요. 방향키로 뱀을 조작하며 음식을 먹고 점수를 올려보세요.">
+    <meta name="keywords" content="스네이트 어드벤처, 뱀 게임, 스네이크 게임, 온라인 게임, 무료 게임, 아케이드 게임, 클래식 게임, snake game">
+    <meta name="author" content="Snake Game Developer">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourwebsite.com/">
+    
+    <!-- Open Graph 메타 태그 -->
+    <meta property="og:title" content="스네이트 어드벤처 - 무료 온라인 스네이크 게임">
+    <meta property="og:description" content="스네이트 어드벤처에서 무료 온라인 뱀 게임을 즐기세요! 클래식 스네이크 게임으로 추억을 되살려보세요.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/">
+    <meta property="og:image" content="https://yourwebsite.com/snake-game-preview.jpg">
+    <meta property="og:image:alt" content="뱀 게임 스크린샷">
+    <meta property="og:site_name" content="스네이트 어드벤처">
+    <meta property="og:locale" content="ko_KR">
+    
+    <!-- Twitter Card 메타 태그 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="스네이트 어드벤처 - 무료 온라인 스네이크 게임">
+    <meta name="twitter:description" content="스네이트 어드벤처에서 무료 온라인 뱀 게임을 즐기세요! 클래식 스네이크 게임으로 추억을 되살려보세요.">
+    <meta name="twitter:image" content="https://yourwebsite.com/snake-game-preview.jpg">
+    
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    
+    <!-- PWA 매니페스트 -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- 구조화된 데이터 (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "스네이트 어드벤처",
+        "description": "스네이트 어드벤처에서 무료 온라인 뱀 게임을 즐기세요! 클래식 스네이크 게임으로 추억을 되살려보세요.",
+        "url": "https://yourwebsite.com/",
+        "image": "https://yourwebsite.com/snake-game-preview.jpg",
+        "genre": "아케이드",
+        "gamePlatform": "웹 브라우저",
+        "operatingSystem": "모든 운영체제",
+        "applicationCategory": "게임",
+        "isAccessibleForFree": true,
+        "inLanguage": "ko"
+    }
+    </script>
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1>스네이트 어드벤처</h1>
+            <div class="score-container">
+                <div class="score" aria-live="polite">점수: <span id="score">0</span></div>
+                <div class="high-score">최고 점수: <span id="highScore">0</span></div>
+            </div>
+        </header>
+        
+        <main>
+            <section class="game-board" aria-label="게임 보드">
+                <canvas id="gameCanvas" width="400" height="400" aria-label="스네이트 어드벤처 게임 캔버스" role="img"></canvas>
+            </section>
+            
+            <section class="game-controls">
+                <div class="control-buttons" role="group" aria-label="게임 컨트롤">
+                    <button id="startBtn" aria-label="게임 시작">시작</button>
+                    <button id="pauseBtn" aria-label="게임 일시정지">일시정지</button>
+                    <button id="restartBtn" aria-label="게임 재시작">재시작</button>
+                </div>
+                <div class="instructions">
+                    <h2>게임 방법</h2>
+                    <h3>조작법</h3>
+                    <ul>
+                        <li>방향키 또는 WASD로 뱀을 조작하세요</li>
+                        <li>빨간 음식을 먹으면 점수가 올라갑니다</li>
+                        <li>벽이나 자신의 몸에 부딪히면 게임이 끝납니다</li>
+                    </ul>
+                    <h3>게임 특징</h3>
+                    <ul>
+                        <li>클래식 아케이드 스타일의 뱀 게임</li>
+                        <li>최고 점수 자동 저장</li>
+                        <li>반응형 디자인으로 모든 기기에서 플레이 가능</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+        
+        <div class="game-over" id="gameOver" role="dialog" aria-modal="true" aria-labelledby="gameOverTitle">
+            <h2 id="gameOverTitle">게임 오버!</h2>
+            <p>최종 점수: <span id="finalScore">0</span></p>
+            <button id="playAgainBtn" aria-label="게임 다시 시작">다시 하기</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

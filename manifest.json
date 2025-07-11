@@ -1,0 +1,27 @@
+{
+    "name": "스네이트 어드벤처 - 클래식 스네이크 게임",
+    "short_name": "스네이트 어드벤처",
+    "description": "스네이트 어드벤처에서 무료 온라인 뱀 게임을 즐기세요! 클래식 스네이크 게임으로 추억을 되살려보세요.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#667eea",
+    "theme_color": "#667eea",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "/apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        }
+    ],
+    "categories": ["games", "entertainment"],
+    "lang": "ko",
+    "scope": "/",
+    "related_applications": [],
+    "prefer_related_applications": false
+}
