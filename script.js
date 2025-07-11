@@ -30,6 +30,9 @@ class SnakeGame {
         this.pauseBtn = document.getElementById('pauseBtn');
         this.restartBtn = document.getElementById('restartBtn');
         this.playAgainBtn = document.getElementById('playAgainBtn');
+        this.helpBtn = document.getElementById('helpBtn');
+        this.helpPopup = document.getElementById('helpPopup');
+        this.closeHelpBtn = document.getElementById('closeHelpBtn');
         
         this.pauseBtn.disabled = true;
     }
@@ -39,8 +42,16 @@ class SnakeGame {
         this.pauseBtn.addEventListener('click', () => this.pauseGame());
         this.restartBtn.addEventListener('click', () => this.restartGame());
         this.playAgainBtn.addEventListener('click', () => this.restartGame());
+        this.helpBtn.addEventListener('click', () => this.showHelp());
+        this.closeHelpBtn.addEventListener('click', () => this.hideHelp());
         
         document.addEventListener('keydown', (e) => this.handleKeyPress(e));
+        
+        this.helpPopup.addEventListener('click', (e) => {
+            if (e.target === this.helpPopup) {
+                this.hideHelp();
+            }
+        });
     }
     
     handleKeyPress(e) {
@@ -49,15 +60,19 @@ class SnakeGame {
         const key = e.key.toLowerCase();
         
         if ((key === 'arrowup' || key === 'w') && this.dy === 0) {
+            e.preventDefault();
             this.dx = 0;
             this.dy = -1;
         } else if ((key === 'arrowdown' || key === 's') && this.dy === 0) {
+            e.preventDefault();
             this.dx = 0;
             this.dy = 1;
         } else if ((key === 'arrowleft' || key === 'a') && this.dx === 0) {
+            e.preventDefault();
             this.dx = -1;
             this.dy = 0;
         } else if ((key === 'arrowright' || key === 'd') && this.dx === 0) {
+            e.preventDefault();
             this.dx = 1;
             this.dy = 0;
         }
@@ -220,6 +235,16 @@ class SnakeGame {
     updateDisplay() {
         this.scoreElement.textContent = this.score;
         this.highScoreElement.textContent = this.highScore;
+    }
+    
+    showHelp() {
+        this.helpPopup.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    hideHelp() {
+        this.helpPopup.classList.remove('show');
+        document.body.style.overflow = 'auto';
     }
 }
 

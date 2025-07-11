@@ -78,12 +78,27 @@
                     <button id="startBtn" aria-label="게임 시작">시작</button>
                     <button id="pauseBtn" aria-label="게임 일시정지">일시정지</button>
                     <button id="restartBtn" aria-label="게임 재시작">재시작</button>
+                    <button id="helpBtn" aria-label="게임 방법 보기">게임 방법</button>
                 </div>
-                <div class="instructions">
-                    <h2>게임 방법</h2>
+            </section>
+        </main>
+        
+        <div class="game-over" id="gameOver" role="dialog" aria-modal="true" aria-labelledby="gameOverTitle">
+            <h2 id="gameOverTitle">게임 오버!</h2>
+            <p>최종 점수: <span id="finalScore">0</span></p>
+            <button id="playAgainBtn" aria-label="게임 다시 시작">다시 하기</button>
+        </div>
+        
+        <div class="help-popup" id="helpPopup" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
+            <div class="help-content">
+                <div class="help-header">
+                    <h2 id="helpTitle">게임 방법</h2>
+                    <button id="closeHelpBtn" aria-label="도움말 닫기" class="close-btn">&times;</button>
+                </div>
+                <div class="help-body">
                     <h3>조작법</h3>
                     <ul>
-                        <li>방향키 또는 WASD로 뱀을 조작하세요</li>
+                        <li><strong>방향키</strong> 또는 <strong>WASD</strong>로 뱀을 조작하세요</li>
                         <li>빨간 음식을 먹으면 점수가 올라갑니다</li>
                         <li>벽이나 자신의 몸에 부딪히면 게임이 끝납니다</li>
                     </ul>
@@ -93,14 +108,14 @@
                         <li>최고 점수 자동 저장</li>
                         <li>반응형 디자인으로 모든 기기에서 플레이 가능</li>
                     </ul>
+                    <h3>팁</h3>
+                    <ul>
+                        <li>뱀의 속도는 일정하므로 미리 방향을 생각하세요</li>
+                        <li>벽 근처에서는 조심하세요</li>
+                        <li>꼬리가 길어질수록 움직임에 주의하세요</li>
+                    </ul>
                 </div>
-            </section>
-        </main>
-        
-        <div class="game-over" id="gameOver" role="dialog" aria-modal="true" aria-labelledby="gameOverTitle">
-            <h2 id="gameOverTitle">게임 오버!</h2>
-            <p>최종 점수: <span id="finalScore">0</span></p>
-            <button id="playAgainBtn" aria-label="게임 다시 시작">다시 하기</button>
+            </div>
         </div>
     </div>
     
